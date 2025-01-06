@@ -1,5 +1,6 @@
 import Slider from 'react-slick';
 import { products } from '../../public/products';
+import { styled } from 'styled-components';
 const Carousel = () => {
   const settings = {
     dots: true,
@@ -30,7 +31,7 @@ const Carousel = () => {
         {products.map((product) => {
           return (
             <div>
-              <div style={{ padding: "1rem" }}>
+              <Container style={{ padding: "1rem" }}>
                 <div style={{ border: "solid 1px grey", padding: "1rem", borderRadius: "8px", display: "flex", flexDirection: "column", alignItems: "center" }}>
                   <div >Name: {product.productName}</div>
                   <div >Category: {product.category}</div>
@@ -44,7 +45,7 @@ const Carousel = () => {
                     style={{ maxHeight: "12rem" }}
                   />
                 </div>
-              </div>
+              </Container>
             </div>
           )
         })}
@@ -54,3 +55,7 @@ const Carousel = () => {
 };
 
 export default Carousel;
+
+const Container = styled.div`
+  padding: 1rem;
+`
