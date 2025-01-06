@@ -31,7 +31,7 @@ const Carousel = () => {
         {products.map((product) => {
           return (
             <div>
-              <Container style={{ padding: "1rem" }}>
+              <Container>
                 <ItemsBody>
                   <LabelContainer>
                     <Label >Name: {product.productName}</Label>
