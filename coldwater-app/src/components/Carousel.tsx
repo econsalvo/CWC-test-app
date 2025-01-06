@@ -43,7 +43,7 @@ const Carousel = () => {
                     src={product.imageMain}
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
-                      target.src = "public/fallback-image.png";
+                      target.src = "public/images/fallback-image.png";
                     }}
                     style={{ maxHeight: "12rem" }}
                   />
