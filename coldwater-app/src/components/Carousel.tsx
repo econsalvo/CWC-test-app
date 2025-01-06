@@ -29,18 +29,22 @@ const Carousel = () => {
       <Slider {...settings}>
         {products.map((product) => {
           return (
-            <div style={{ border: "solid 1px grey" }}>
-              <div >Name: {product.productName}</div>
-              <div >Category: {product.category}</div>
-              <div >Price: {product.price}</div>
-              <img
-                src={product.imageMain}
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.src = "public/fallback-image.png";
-                }}
-                style={{ maxHeight: "12rem" }}
-              />
+            <div>
+              <div style={{ padding: "1rem" }}>
+                <div style={{ border: "solid 1px grey", padding: "1rem", borderRadius: "8px", display: "flex", flexDirection: "column", alignItems: "center" }}>
+                  <div >Name: {product.productName}</div>
+                  <div >Category: {product.category}</div>
+                  <div >Price: {product.price}</div>
+                  <img
+                    src={product.imageMain}
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = "public/fallback-image.png";
+                    }}
+                    style={{ maxHeight: "12rem" }}
+                  />
+                </div>
+              </div>
             </div>
           )
         })}
