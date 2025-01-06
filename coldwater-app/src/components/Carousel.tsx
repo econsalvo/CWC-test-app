@@ -32,10 +32,13 @@ const Carousel = () => {
           return (
             <div>
               <Container style={{ padding: "1rem" }}>
-                <div style={{ border: "solid 1px grey", padding: "1rem", borderRadius: "8px", display: "flex", flexDirection: "column", alignItems: "center" }}>
-                  <div >Name: {product.productName}</div>
-                  <div >Category: {product.category}</div>
-                  <div >Price: {product.price}</div>
+                <ItemsBody>
+                  <LabelContainer>
+                    <Label >Name: {product.productName}</Label>
+                    <Label >Category: {product.category}</Label>
+                    <Label >Price: {product.price}</Label>
+                    <Label >Currency: {product.priceCurrency}</Label>
+                  </LabelContainer>
                   <img
                     src={product.imageMain}
                     onError={(e) => {
@@ -44,7 +47,7 @@ const Carousel = () => {
                     }}
                     style={{ maxHeight: "12rem" }}
                   />
-                </div>
+                </ItemsBody>
               </Container>
             </div>
           )
@@ -58,4 +61,22 @@ export default Carousel;
 
 const Container = styled.div`
   padding: 1rem;
-`
+`;
+
+const ItemsBody = styled.div`
+  border: solid 1px grey;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Label = styled.div`
+  font-family: sans-serif;
+`;
+const LabelContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+`;
